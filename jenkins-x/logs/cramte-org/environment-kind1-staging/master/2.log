@@ -1,0 +1,45 @@
+
+Showing logs for build [32mcramte-org-environment-kind1-st-8g96c-2[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-rfxlp[0m
+{"level":"warn","ts":1580936837.1636553,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1580936837.1643994,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcramte-org-environment-kind1-st-8g96c-2[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-jjtlm[0m
+{"level":"warn","ts":1580936837.4179287,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1580936837.419249,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcramte-org-environment-kind1-st-8g96c-2[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcramte-org-environment-kind1-st-8g96c-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cramte-org-environment-kind1-st-8g96c-t9wsz[0m
+{"level":"warn","ts":1580936842.4615858,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1580936845.8578732,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/******-org/environment-kind1-staging.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mcramte-org-environment-kind1-st-8g96c-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:f1af4dbfd1161d239823f5ae65febbe1b80b9b03
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcramte-org-environment-kind1-st-8g96c-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /builder/home/git/credentials
+
+Showing logs for build [32mcramte-org-environment-kind1-st-8g96c-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-apply[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 2
+Ignoring templates/.gitignore
+Ignoring templates/wildcardcert-secret.yaml
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+error: failed to build the dependencies of chart '/tmp/**-helm-apply-969285311/env': failed to run 'helm dependency build' command in directory '/tmp/**-helm-apply-969285311/env', output: 'Hang tight while we grab the latest from your chart repositories...
+...Unable to get an update from the "local" chart repository (http://127.0.0.1:8879/charts):
+	Get http://127.0.0.1:8879/charts/index.yaml: dial tcp 127.0.0.1:8879: connect: connection refused
+...Successfully got an update from the "jenkins-x-chartmuseum" chart repository
+...Successfully got an update from the "chartmuseum.jenkins-x.io" chart repository
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "storage.googleapis.com" chart repository
+Update Complete.
+Error: Can't get a valid version for repositories **-qs-python. Try changing the version constraint in requirements.yaml'
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-helm-apply'. The execution of the pipeline has stopped.[0m
